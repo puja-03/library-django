@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Book Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    {% include "header.html" %}
+<div class="flex flex-1 h-[88vh] p-4">
+    {% include "sidebar.html" %}
+    <div class="w-9/12 p-4"> 
+        <h1 class="text-3xl font-bold ">Books</h1>
+        <div class="mt-10 flex-1">
+            <h2 class="text-2xl font-semibild">Manage Book({{Book|length}})</h2>
+            <table class="border rounded w-full mt-6 text-center bg-slate-400 "> 
+                <thead>
+                      <tr>
+                        <th class="border p-3">BookId</th>
+                        <th class="border p-3">Title</th>
+                        <th class="border p-3">Image</th>
+                        <th class="border p-3">Author</th>
+                        <th class="border p-3">Publication</th>
+                        <th class="border p-3">Actions</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                    <tr class="hover:bg-slate-500">
+                        <td class="border p-3">{{book.bookid}}</td>
+                        <td class="border p-3">{{book.booktitle}}</td>
+                        <td class="border p-3">{{book.image}}</td>
+                        <td class="border p-3">{{book.author}}</td>
+                        <td class="border p-3">{{book.publication}}</td>
+                        <td class="border p-3">
+                          <a href="{% url 'bookdelete' book.id %}" class="bg-red-400 text-white rounded px-3 py-2 ">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+</body>
+</html>

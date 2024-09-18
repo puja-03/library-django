@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    {% include "header.html" %}
+    <div class="flex flex-1 h-[88vh] p-4">
+        {% include "sidebar.html" %}
+        <div class="w-9/12 p-4"> 
+            <h1 class="text-3xl font-bold px-8">DashBoard</h1>
+            <div class="flex flex-1 grid grid-cols-3 mt-4 p-4 gap-4 text-center ">
+                <div class="bg-pink-600 mt-4 rounded-lg py-10 px-6 hover:bg-slate-500">
+                    <h1 class="text-white text-2xl font-bold">Total Students</h1>
+                    <p class="text-white text-xl font-semibold">{{students|length}}+</p>
+                </div>
+                <div class="bg-green-700 mt-4 rounded-lg py-10 px-6 hover:bg-slate-500">
+                    <h1 class="text-white text-2xl font-bold">Total Books</h1>
+                    <p class="text-white text-xl font-semibold">50+</p>
+                </div>
+                <div class="bg-red-700 mt-4 rounded-lg py-10 px-6 hover:bg-slate-500">
+                    <h1 class="text-white text-2xl font-bold">Issue Book</h1>
+                    <p class="text-white text-xl font-semibold">30+</p>
+                </div>
+                <div class="bg-cyan-400 mt-4 rounded-lg py-10 px-6 hover:bg-slate-500">
+                    <h1 class="text-white text-2xl font-bold">Return Book</h1>
+                    <p class="text-white text-xl font-semibold">60+</p>
+                </div>
+                <div class="bg-purple-400 mt-4 rounded-lg py-10 px-6 hover:bg-slate-500">
+                    <h1 class="text-white text-2xl font-bold">Due List Book</h1>
+                    <p class="text-white text-xl font-semibold">60+</p>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
